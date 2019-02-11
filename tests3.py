@@ -6,6 +6,6 @@ s3 = boto3.resource('s3')
 # Print out bucket names
 for bucket in s3.buckets.all():
     print(bucket.name)
-    for file in s3.Bucket(bucket.name).all():
-        print(file.name)
+    for filelist in s3.Bucket(bucket.name).objects():
+        print(filelist)
  
